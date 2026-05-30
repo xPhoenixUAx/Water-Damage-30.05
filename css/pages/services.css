@@ -1,0 +1,239 @@
+.services-hero {
+  --hero-image: url("../../img/services/water-damage-services-overview.webp");
+  min-height: 330px;
+  align-items: end;
+  isolation: isolate;
+  padding: 10.25rem 0 4.7rem;
+  background:
+    linear-gradient(90deg, rgba(7, 87, 107, 0.9) 0%, rgba(15, 127, 149, 0.66) 42%, rgba(11, 41, 52, 0.2) 78%),
+    linear-gradient(0deg, rgba(7, 87, 107, 0.22), rgba(7, 87, 107, 0.22)),
+    var(--hero-image) center 48% / cover;
+}
+
+.services-hero::after {
+  z-index: 0;
+  background:
+    linear-gradient(90deg, rgba(7, 87, 107, 0.18), transparent 52%),
+    radial-gradient(circle at 72% 18%, rgba(217, 243, 246, 0.28), transparent 28%);
+  opacity: 1;
+}
+
+.services-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.services-hero h1 {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(2.8rem, 5vw, 4.25rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  color: #fff;
+}
+
+.hero-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 1.3rem;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.hero-breadcrumb a {
+  color: #fff;
+  font-weight: 700;
+}
+
+.hero-breadcrumb span[aria-hidden="true"] {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.services-directory-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 7vw, 6rem);
+  align-items: start;
+}
+
+.services-directory-layout.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.services-directory-intro {
+  position: sticky;
+  top: 9rem;
+  max-width: 520px;
+}
+
+.services-directory-intro h2 {
+  max-width: 11ch;
+  color: var(--deep);
+}
+
+.services-directory-intro p {
+  max-width: 52ch;
+  margin-top: 1.35rem;
+}
+
+.services-directory-intro .btn {
+  margin-top: 1.1rem;
+}
+
+.services-scroll-list {
+  display: grid;
+  gap: 1.55rem;
+  max-height: min(780px, calc(100vh - 8rem));
+  overflow-y: auto;
+  padding: 0.4rem 0.9rem 0.4rem 0.2rem;
+  scrollbar-color: rgba(15, 127, 149, 0.55) rgba(255, 253, 248, 0.7);
+  scrollbar-width: thin;
+}
+
+.services-scroll-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.services-scroll-list::-webkit-scrollbar-track {
+  background: rgba(255, 253, 248, 0.72);
+}
+
+.services-scroll-list::-webkit-scrollbar-thumb {
+  background: rgba(15, 127, 149, 0.55);
+  border-radius: 999px;
+}
+
+.service-scroll-card {
+  position: relative;
+}
+
+.service-card-body {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 1.35rem;
+  align-items: center;
+  min-height: 150px;
+  padding: 1.35rem 1.55rem;
+  background: var(--surface);
+  border: 1px solid rgba(16, 32, 41, 0.08);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 44px rgba(16, 32, 41, 0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.service-card-body:hover,
+.service-card-body:focus-visible {
+  border-color: rgba(15, 127, 149, 0.28);
+  box-shadow: 0 24px 58px rgba(7, 87, 107, 0.15);
+  outline: 0;
+  transform: translateY(-2px);
+}
+
+.service-card-body img {
+  width: 112px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.service-card-copy {
+  min-width: 0;
+}
+
+.service-card-copy span {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--water);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.service-card-copy h3 {
+  max-width: 19ch;
+  color: var(--ink);
+  font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+}
+
+.service-card-copy p {
+  margin: 0.8rem 0 0;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .services-hero {
+    min-height: 270px;
+    padding: 7.2rem 0 3.5rem;
+    background-position: center;
+  }
+
+  .services-hero h1 {
+    font-size: clamp(2.35rem, 13vw, 3.1rem);
+  }
+
+  .hero-breadcrumb {
+    margin-top: 0.9rem;
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 980px) {
+  .services-directory-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .services-directory-intro {
+    position: static;
+    max-width: 680px;
+  }
+
+  .services-directory-intro h2 {
+    max-width: 14ch;
+  }
+
+  .services-scroll-list {
+    max-height: 680px;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-scroll-list {
+    max-height: 620px;
+    gap: 1rem;
+    padding-right: 0.2rem;
+  }
+
+  .service-card-body {
+    grid-template-columns: 78px minmax(0, 1fr);
+    gap: 0.9rem;
+    min-height: 132px;
+    padding: 1rem;
+  }
+
+  .service-card-body img {
+    width: 78px;
+  }
+
+  .service-card-copy span {
+    font-size: 0.66rem;
+  }
+
+  .service-card-copy h3 {
+    max-width: none;
+    font-size: 1.02rem;
+  }
+
+  .service-card-copy p {
+    margin-top: 0.6rem;
+    padding-top: 0.6rem;
+    font-size: 0.78rem;
+  }
+}
