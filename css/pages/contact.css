@@ -305,6 +305,10 @@
 }
 
 @media (max-width: 640px) {
+  .contact-main-section {
+    background: #fffdf8;
+  }
+
   .contact-hero {
     min-height: 270px;
     padding: 7.2rem 0 3.5rem;

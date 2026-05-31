@@ -255,24 +255,6 @@ body[data-service] main li {
   box-shadow: none;
 }
 
-.service-copy-icon {
-  width: 34px;
-  height: 34px;
-  display: grid;
-  place-items: center;
-  margin: 0 0 1rem;
-  color: var(--amber-deep);
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-.service-copy-icon .service-icon {
-  width: 20px;
-  height: 20px;
-}
-
 .service-detail-content p {
   color: var(--muted);
 }
@@ -373,8 +355,13 @@ body[data-service] main li {
 .service-info-panel ul {
   list-style: none;
   padding: 0;
+  margin-bottom: 0;
   display: grid;
   gap: 0.65rem;
+}
+
+.service-planning-copy ul {
+  margin-bottom: 0.9rem;
 }
 
 .service-planning-copy li,
@@ -389,13 +376,26 @@ body[data-service] main li {
   font-weight: 700;
 }
 
-.service-planning-copy li .service-icon {
-  width: 22px;
-  height: 22px;
-  padding: 0;
-  color: var(--clay);
-  background: transparent;
-  border-radius: 0;
+.service-planning-copy li::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  margin-top: 0.1rem;
+  border: 1px solid rgba(143, 91, 18, 0.28);
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--amber), var(--clay));
+}
+
+.service-planning-copy li::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 0.4rem;
+  width: 5px;
+  height: 9px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 .service-info-panel li .service-icon {

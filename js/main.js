@@ -37,6 +37,17 @@
     });
   }
 
+  function renderFooterBrandLabels() {
+    document.querySelectorAll(".site-footer .footer-title[data-company-name]").forEach((node) => {
+      if (node.querySelector(".footer-brand-label")) return;
+      node.innerHTML = `
+        <span class="footer-brand-label">
+          <span class="brand-mark footer-brand-mark">WF</span>
+          <span class="footer-brand-copy">${config.companyName || ""}</span>
+        </span>`;
+    });
+  }
+
   function serviceUrl(slug) {
     return location.pathname.includes("/services/") ? `./${slug}.html` : `./services/${slug}.html`;
   }
@@ -301,7 +312,6 @@
               <img src=".${service.detailImage}" alt="${service.title} detail image">
             </figure>
             <div class="service-copy-panel">
-              <div class="service-copy-icon">${iconSvg("moisture")}</div>
               <p class="service-lead">${service.summary} ${config.companyName} helps property owners compare independent local service options and request information before choosing a company.</p>
               <p>A selected provider may inspect affected areas, explain drying or cleanup needs, document findings, and outline next steps before work begins. The platform does not perform restoration work directly.</p>
               <h2>Why this service matters</h2>
@@ -327,10 +337,10 @@
             <h2>Prepare before authorizing work</h2>
             <p>${service.insurance}</p>
             <ul>
-              <li>${iconSvg("badge")}<span>Ask for license and insurance details.</span></li>
-              <li>${iconSvg("estimate")}<span>Request a written estimate before approval.</span></li>
-              <li>${iconSvg("tools")}<span>Clarify equipment, drying, cleanup, and exclusions.</span></li>
-              <li>${iconSvg("camera")}<span>Keep photos and written records for your file.</span></li>
+              <li><span>Ask for license and insurance details.</span></li>
+              <li><span>Request a written estimate before approval.</span></li>
+              <li><span>Clarify equipment, drying, cleanup, and exclusions.</span></li>
+              <li><span>Keep photos and written records for your file.</span></li>
             </ul>
           </div>
             </div>
@@ -575,6 +585,7 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     hydrateConfig();
+    renderFooterBrandLabels();
     renderServiceLinks();
     renderServiceDropdowns();
     organizeFooterLegalLinks();

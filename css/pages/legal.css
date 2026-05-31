@@ -1,3 +1,125 @@
 .legal-hero {
   --hero-image: url("../../img/common/legal-document-review.webp");
 }
+
+.legal-page {
+  font-family: Manrope, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #fffdf8;
+}
+
+.legal-page main h1,
+.legal-page main h2,
+.legal-page main h3,
+.legal-page .btn {
+  font-family: inherit;
+}
+
+.legal-page .legal-hero {
+  min-height: 330px;
+  align-items: end;
+  isolation: isolate;
+  padding: 10.25rem 0 4.7rem;
+  background:
+    linear-gradient(90deg, rgba(7, 31, 43, 0.94) 0%, rgba(7, 87, 107, 0.58) 48%, rgba(143, 91, 18, 0.28) 100%),
+    var(--hero-image) center 48% / cover;
+}
+
+.legal-page .legal-hero::after {
+  z-index: 0;
+  background:
+    linear-gradient(90deg, rgba(7, 87, 107, 0.18), transparent 52%),
+    radial-gradient(circle at 72% 18%, rgba(255, 242, 207, 0.38), transparent 28%);
+  opacity: 1;
+}
+
+.legal-page .legal-hero .hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.legal-page .legal-hero h1 {
+  color: #fff;
+  font-size: clamp(2.35rem, 4.35vw, 3.55rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.legal-page .legal-hero p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.legal-page .section-kicker {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+}
+
+.legal-page .legal-content {
+  width: min(100%, 900px);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.legal-page .legal-content.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.legal-page .legal-content h2,
+.legal-page .legal-content h3 {
+  color: var(--deep);
+  font-weight: 800;
+  line-height: 1.14;
+}
+
+.legal-page .legal-content h2 {
+  margin-top: 2.15rem;
+  font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+}
+
+.legal-page .legal-content h3 {
+  margin-top: 1.35rem;
+  font-size: 1.04rem;
+}
+
+.legal-page .legal-content p {
+  color: var(--ink-2);
+}
+
+.legal-page .legal-content a {
+  color: var(--water-deep);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .legal-page .legal-hero {
+    min-height: 270px;
+    padding: 7.2rem 0 3.5rem;
+    background-position: center;
+  }
+
+  .legal-page .legal-hero h1 {
+    font-size: clamp(2rem, 10vw, 2.55rem);
+  }
+
+  .legal-page .legal-hero p {
+    font-size: 0.9rem;
+  }
+
+  .legal-page .section {
+    padding: 3.25rem 0;
+  }
+
+  .legal-page .legal-content {
+    padding: 1.2rem;
+    border-radius: 0;
+    font-size: 0.88rem;
+    box-shadow: 0 16px 38px rgba(16, 32, 41, 0.08);
+  }
+
+  .legal-page .legal-content h2 {
+    margin-top: 1.65rem;
+    font-size: 1.28rem;
+  }
+}

@@ -1,18 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="WaterFix Connect">
-  <defs>
-    <linearGradient id="drop" x1="12" y1="8" x2="52" y2="58" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ffffff"/>
-      <stop offset="1" stop-color="#d9f3f6"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="18" y1="44" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#d99a22"/>
-      <stop offset="1" stop-color="#c85f3e"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="14" fill="#07576b"/>
-  <path d="M32 6C44 17 54 30 54 42c0 10-8 16-22 16S10 52 10 42C10 30 20 17 32 6Z" fill="url(#drop)"/>
-  <circle cx="44" cy="17" r="4" fill="#ffffff"/>
-  <path d="M18 35 32 23l14 12v14H18V35Z" fill="#07576b"/>
-  <path d="M15 35 32 20l17 15" fill="none" stroke="#071f2b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M20 45c5 4 19 4 24 0" fill="none" stroke="url(#accent)" stroke-width="4" stroke-linecap="round"/>
+  <rect width="64" height="64" rx="10" fill="#07576b"/>
+  <path d="M18 14v36" stroke="#d99a22" stroke-width="5" stroke-linecap="round"/>
+  <text x="26" y="30" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" letter-spacing=".8">WATER</text>
+  <text x="26" y="45" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" letter-spacing=".8">FIX</text>
 </svg>

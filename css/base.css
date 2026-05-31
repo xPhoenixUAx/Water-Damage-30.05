@@ -199,7 +199,7 @@ li + li {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.78rem;
   font-weight: 900;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -207,81 +207,41 @@ li + li {
 
 .brand-mark {
   position: relative;
-  width: 58px;
-  height: 52px;
+  width: 4px;
+  height: 42px;
   display: block;
   flex: 0 0 auto;
   overflow: hidden;
-  color: #fff;
+  color: transparent;
   font-size: 0;
-  background:
-    radial-gradient(
-      circle at 72% 20%,
-      rgba(255, 255, 255, 0.98) 0 4px,
-      transparent 4.5px
-    ),
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.98),
-      rgba(217, 243, 246, 0.72)
-    );
-  border-radius: 62% 38% 58% 42% / 48% 50% 50% 52%;
-  filter: drop-shadow(0 12px 18px rgba(3, 35, 45, 0.24));
+  background: linear-gradient(180deg, var(--amber), var(--clay));
+  border-radius: 999px;
+  box-shadow: 0 10px 22px rgba(3, 35, 45, 0.18);
 }
 
 .brand-mark::before {
-  content: "";
-  position: absolute;
-  left: 13px;
-  top: 18px;
-  width: 32px;
-  height: 23px;
-  background:
-    linear-gradient(
-      135deg,
-      transparent 0 47%,
-      var(--water-deep) 48% 58%,
-      transparent 59%
-    ),
-    linear-gradient(
-      225deg,
-      transparent 0 47%,
-      var(--water-deep) 48% 58%,
-      transparent 59%
-    ),
-    linear-gradient(var(--water-deep), var(--water-deep)) center bottom / 23px
-      13px no-repeat;
-  border-radius: 2px 2px 8px 8px;
+  content: none;
 }
 
 .brand-mark::after {
-  content: "";
-  position: absolute;
-  left: 10px;
-  right: 9px;
-  bottom: 9px;
-  height: 10px;
-  border: 2px solid var(--water);
-  border-color: transparent transparent var(--water) transparent;
-  border-radius: 0 0 50% 50%;
-  box-shadow: 0 5px 0 -2px rgba(217, 154, 34, 0.58);
+  content: none;
 }
 
 .brand span:last-child {
   position: relative;
   display: grid;
-  gap: 0.1rem;
-  font-size: clamp(1.02rem, 1.35vw, 1.32rem);
-  line-height: 0.95;
+  gap: 0.16rem;
+  font-size: clamp(1rem, 1.22vw, 1.22rem);
+  line-height: 0.98;
   text-shadow: 0 8px 20px rgba(3, 35, 45, 0.16);
 }
 
 .brand span:last-child::after {
-  content: "Restoration provider connection";
+  content: "Provider connection";
   color: rgba(217, 243, 246, 0.86);
-  font-size: 0.57rem;
+  font-size: 0.61rem;
   font-weight: 800;
-  letter-spacing: 0.11em;
+  letter-spacing: 0.14em;
   line-height: 1.2;
   text-transform: uppercase;
 }
@@ -1040,14 +1000,26 @@ details:not([open]) .accordion-content {
     url("../img/home/restoration-planning-documents.webp") center / cover;
 }
 
+.final-cta p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.final-cta .section-kicker {
+  color: var(--amber-light);
+}
+
 .final-cta-inner {
   max-width: 800px;
 }
 
 .site-footer {
   padding: 4rem 0 2rem;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.9);
   background: var(--deep);
+}
+
+.site-footer p {
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .footer-grid {
@@ -1064,10 +1036,31 @@ details:not([open]) .accordion-content {
   margin-bottom: 0.8rem;
 }
 
+.footer-brand-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.72rem;
+  max-width: 100%;
+}
+
+.footer-brand-mark {
+  width: 4px;
+  height: 34px;
+  flex: 0 0 auto;
+}
+
+.footer-brand-copy {
+  min-width: 0;
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
 .footer-link {
   display: block;
   margin: 0.35rem 0;
-  color: rgba(255, 255, 255, 0.76);
+  color: rgba(255, 255, 255, 0.86);
 }
 
 .footer-link-emphasis {
@@ -1081,6 +1074,7 @@ details:not([open]) .accordion-content {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.72);
   font-size: 0.82rem;
 }
 
@@ -1090,6 +1084,7 @@ details:not([open]) .accordion-content {
   align-items: center;
   gap: 1rem;
   margin-top: 1.5rem;
+  color: rgba(255, 255, 255, 0.86);
   font-size: 0.82rem;
 }
 
@@ -1110,7 +1105,7 @@ details:not([open]) .accordion-content {
 }
 
 .footer-legal-link {
-  color: rgba(255, 255, 255, 0.76);
+  color: rgba(255, 255, 255, 0.88);
   font-weight: 800;
 }
 
@@ -1314,37 +1309,8 @@ textarea {
   }
 
   .brand-mark {
-    width: 42px;
-    height: 38px;
-  }
-
-  .brand-mark::before {
-    left: 9px;
-    top: 13px;
-    width: 24px;
-    height: 18px;
-    background:
-      linear-gradient(
-        135deg,
-        transparent 0 47%,
-        var(--water-deep) 48% 58%,
-        transparent 59%
-      ),
-      linear-gradient(
-        225deg,
-        transparent 0 47%,
-        var(--water-deep) 48% 58%,
-        transparent 59%
-      ),
-      linear-gradient(var(--water-deep), var(--water-deep)) center bottom / 17px
-        10px no-repeat;
-  }
-
-  .brand-mark::after {
-    left: 8px;
-    right: 7px;
-    bottom: 7px;
-    height: 7px;
+    width: 4px;
+    height: 36px;
   }
 
   .brand span {
