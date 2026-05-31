@@ -80,6 +80,16 @@ body[data-service] main li {
 
 .service-breadcrumb a {
   color: #fff;
+  transition: color 180ms ease, text-decoration-color 180ms ease;
+}
+
+.service-breadcrumb a:hover,
+.service-breadcrumb a:focus-visible {
+  color: var(--amber-light);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  outline: 0;
 }
 
 .service-breadcrumb span[aria-hidden="true"] {
@@ -154,10 +164,13 @@ body[data-service] main li {
 }
 
 .service-side-nav a.is-active,
-.service-side-nav a:hover {
+.service-side-nav a:hover,
+.service-side-nav a:focus-visible {
   color: var(--amber-deep);
   background: var(--amber-light);
   transform: translateX(2px);
+  outline: 0;
+  box-shadow: inset 3px 0 0 var(--amber);
 }
 
 .service-help-card {
@@ -166,6 +179,17 @@ body[data-service] main li {
   border: 1px solid rgba(16, 32, 41, 0.08);
   border-radius: 16px;
   box-shadow: 0 14px 34px rgba(16, 32, 41, 0.08);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.service-help-card:hover,
+.service-help-card:focus-within {
+  transform: translateY(-3px);
+  border-color: rgba(127, 155, 117, 0.42);
+  box-shadow: 0 20px 48px rgba(16, 32, 41, 0.12);
 }
 
 .service-help-card img {
@@ -208,6 +232,16 @@ body[data-service] main li {
   font-size: 0.86rem;
   font-weight: 800;
   line-height: 1.1;
+  transition: color 180ms ease, text-decoration-color 180ms ease;
+}
+
+.service-help-body a:hover,
+.service-help-body a:focus-visible {
+  color: var(--water-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  outline: 0;
 }
 
 .service-detail-content {
@@ -563,6 +597,32 @@ body[data-service] .related-list a {
   padding: 0;
   gap: 0;
   min-height: 0;
+  border: 1px solid rgba(143, 91, 18, 0.12);
+  background: #fff;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+body[data-service] .related-list a:hover,
+body[data-service] .related-list a:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(217, 154, 34, 0.5);
+  box-shadow:
+    0 22px 54px rgba(16, 32, 41, 0.12),
+    0 0 0 4px rgba(217, 154, 34, 0.12);
+  outline: 0;
+}
+
+body[data-service] .related-list a img {
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+body[data-service] .related-list a:hover img,
+body[data-service] .related-list a:focus-visible img {
+  filter: saturate(1.08) contrast(1.04);
+  transform: scale(1.025);
 }
 
 body[data-service] .related-list {

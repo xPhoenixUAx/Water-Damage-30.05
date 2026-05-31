@@ -121,6 +121,19 @@
   font-weight: 600;
 }
 
+.contact-details a {
+  transition: color 180ms ease, text-decoration-color 180ms ease;
+}
+
+.contact-details a:hover,
+.contact-details a:focus-visible {
+  color: var(--water-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  outline: 0;
+}
+
 .contact-note {
   margin-top: 1.2rem;
   color: var(--muted);
@@ -133,6 +146,15 @@
   border: 1px solid rgba(143, 91, 18, 0.18);
   border-radius: var(--radius);
   box-shadow: 0 22px 58px rgba(143, 91, 18, 0.1);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.contact-form:hover,
+.contact-form:focus-within {
+  border-color: rgba(217, 154, 34, 0.4);
+  box-shadow: 0 26px 66px rgba(143, 91, 18, 0.14);
 }
 
 .contact-form .form-grid {
@@ -214,6 +236,20 @@
   cursor: pointer;
   font-family: inherit;
   font-weight: 900;
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.confirmation-modal-close:hover,
+.confirmation-modal-close:focus-visible {
+  color: #fff;
+  background: var(--deep);
+  border-color: var(--deep);
+  transform: translateY(-1px);
+  outline: 0;
 }
 
 .confirmation-modal-icon {
@@ -266,6 +302,14 @@
 .contact-guidance-item {
   padding-top: 1.2rem;
   border-top: 3px solid rgba(217, 154, 34, 0.72);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease;
+}
+
+.contact-guidance-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--amber-light);
 }
 
 .contact-guidance-item span {

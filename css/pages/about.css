@@ -147,12 +147,26 @@
   gap: 0.85rem;
   padding-top: 1.2rem;
   border-top: 3px solid rgba(217, 154, 34, 0.62);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease;
+}
+
+.about-value-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--amber);
 }
 
 .about-value-card svg {
   width: 30px;
   height: 30px;
   color: var(--amber-deep);
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.about-value-card:hover svg {
+  color: var(--clay);
+  transform: translateY(-2px);
 }
 
 .about-value-card h2 {
@@ -207,6 +221,16 @@
   margin: 0;
   padding: 1.15rem 0;
   border-bottom: 1px solid var(--line);
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    padding 180ms ease;
+}
+
+.about-process-list li:hover {
+  padding-inline: 0.85rem;
+  background: rgba(255, 242, 207, 0.08);
+  border-color: rgba(255, 242, 207, 0.28);
 }
 
 .about-process-list span {

@@ -56,6 +56,91 @@
     return location.pathname.includes("/services/") ? `../services.html` : `./services.html`;
   }
 
+  function contactUrl() {
+    return location.pathname.includes("/services/") ? `../contact.html` : `./contact.html`;
+  }
+
+  function cookiePolicyUrl() {
+    return location.pathname.includes("/services/") ? `../cookie.html` : `./cookie.html`;
+  }
+
+  function renderMobileFloatingCta() {
+    if (document.querySelector(".mobile-floating-cta")) return;
+
+    const cta = document.createElement("div");
+    cta.className = "mobile-floating-cta";
+    cta.innerHTML = `
+      <a class="mobile-floating-cta-call" data-phone-button href="tel:${config.phone || ""}">
+        ${config.phoneButtonLabel || config.phoneDisplay || "Call Now"}
+      </a>
+      <a class="mobile-floating-cta-link" href="${contactUrl()}">
+        ${config.ctaPrimary || "Get Free Estimate"}
+      </a>`;
+    document.body.appendChild(cta);
+  }
+
+  function initMobileFloatingCta() {
+    const cta = document.querySelector(".mobile-floating-cta");
+    if (!cta) return;
+
+    const update = () => {
+      cta.classList.toggle("is-visible", window.scrollY > 220);
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+  }
+
+  function getStoredCookieConsent() {
+    try {
+      return localStorage.getItem("wfcCookieConsent");
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function storeCookieConsent(value) {
+    try {
+      localStorage.setItem("wfcCookieConsent", value);
+      localStorage.setItem("wfcCookieConsentDate", new Date().toISOString());
+    } catch (error) {
+      return;
+    }
+  }
+
+  function renderCookieBanner() {
+    if (document.querySelector(".cookie-banner") || getStoredCookieConsent()) return;
+
+    const banner = document.createElement("section");
+    banner.className = "cookie-banner";
+    banner.setAttribute("aria-label", "Cookie notice");
+    banner.innerHTML = `
+      <div class="cookie-banner-copy">
+        <span class="cookie-banner-kicker">Cookie notice</span>
+        <p>We use essential cookies to keep this site working. With your consent, we may also use analytics or functional cookies to improve the provider connection experience.</p>
+        <a href="${cookiePolicyUrl()}">Read Cookie Policy</a>
+      </div>
+      <div class="cookie-banner-actions">
+        <button class="cookie-banner-secondary" type="button" data-cookie-choice="essential">Essential only</button>
+        <button class="cookie-banner-primary" type="button" data-cookie-choice="accepted">Accept all</button>
+      </div>`;
+    document.body.appendChild(banner);
+    document.body.classList.add("cookie-banner-open");
+  }
+
+  function initCookieBanner() {
+    const banner = document.querySelector(".cookie-banner");
+    if (!banner) return;
+
+    banner.querySelectorAll("[data-cookie-choice]").forEach((button) => {
+      button.addEventListener("click", () => {
+        storeCookieConsent(button.dataset.cookieChoice || "essential");
+        banner.classList.add("is-closing");
+        document.body.classList.remove("cookie-banner-open");
+        window.setTimeout(() => banner.remove(), 220);
+      });
+    });
+  }
+
   function renderServiceLinks() {
     document.querySelectorAll("[data-service-links]").forEach((container) => {
       const compact = container.dataset.serviceLinks === "compact";
@@ -424,6 +509,9 @@
       header.querySelectorAll(".nav-dropdown-trigger").forEach((trigger) => {
         trigger.classList.toggle("is-active", isServiceDetail || currentPath === "services.html");
       });
+      document.querySelectorAll(".mobile-services-dropdown").forEach((dropdown) => {
+        dropdown.classList.toggle("is-active", isServiceDetail || currentPath === "services.html");
+      });
       document.addEventListener("click", () => {
         header.querySelectorAll(".nav-dropdown.is-open").forEach((dropdown) => {
           dropdown.classList.remove("is-open");
@@ -591,8 +679,13 @@
     organizeFooterLegalLinks();
     renderServiceDirectory();
     renderServiceDetail();
+    renderMobileFloatingCta();
+    renderCookieBanner();
+    hydrateConfig();
     initIcons();
     initHeader();
+    initMobileFloatingCta();
+    initCookieBanner();
     initSmoothAccordions();
     initContactFormConfirmation();
     initReveal();

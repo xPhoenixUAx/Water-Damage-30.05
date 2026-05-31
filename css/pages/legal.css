@@ -90,6 +90,16 @@
   color: var(--water-deep);
   font-weight: 800;
   overflow-wrap: anywhere;
+  transition: color 180ms ease, text-decoration-color 180ms ease;
+}
+
+.legal-page .legal-content a:hover,
+.legal-page .legal-content a:focus-visible {
+  color: var(--amber-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  outline: 0;
 }
 
 @media (max-width: 640px) {
