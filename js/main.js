@@ -343,9 +343,9 @@
     const slug = document.body.dataset.service || new URLSearchParams(location.search).get("service") || services[0].slug;
     const service = services.find((item) => item.slug === slug) || services[0];
     const related = services.filter((item) => item.slug !== service.slug).slice(0, 4);
-    const supportImage = service.supportImage || "./img/services/provider-support-call-generated.png";
-    const documentationImage = service.documentationImage || "./img/services/moisture-documentation-generated.png";
-    const planningImage = service.planningImage || "./img/services/restoration-planning-strategy-generated.png";
+    const supportImage = service.supportImage || "./img/services/provider-support-call-generated.webp";
+    const documentationImage = service.documentationImage || "./img/services/moisture-documentation-generated.webp";
+    const planningImage = service.planningImage || "./img/services/restoration-planning-strategy-generated.webp";
     const benefitCards = [
       ["source", "Source review", "Discuss the visible source, timing, affected rooms, and safety concerns before work begins."],
       ["moisture", "Moisture checks", "Ask how the provider will inspect surfaces, cavities, flooring, and hidden damp areas."],
