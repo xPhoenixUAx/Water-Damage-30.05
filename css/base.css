@@ -15,6 +15,12 @@
   --water-deep: #07576b;
   --water-light: #d9f3f6;
   --brass: #b9904d;
+  --amber: #d99a22;
+  --amber-deep: #8f5b12;
+  --amber-light: #fff2cf;
+  --clay: #c85f3e;
+  --sage: #7f9b75;
+  --night: #071f2b;
   --shadow: 0 24px 70px rgba(16, 32, 41, 0.14);
   --radius: 8px;
   --container: min(1160px, calc(100% - 40px));
@@ -27,13 +33,22 @@
 }
 
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: 110px;
 }
 
 body {
   margin: 0;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow-x: hidden;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   color: var(--ink);
   background: var(--paper);
   line-height: 1.6;
@@ -105,7 +120,11 @@ li + li {
   color: var(--ink-2);
   padding-top: 0.55rem;
   background: rgba(247, 251, 251, 0.94);
-  transition: background 260ms ease, box-shadow 260ms ease, color 260ms ease, padding 260ms ease;
+  transition:
+    background 260ms ease,
+    box-shadow 260ms ease,
+    color 260ms ease,
+    padding 260ms ease;
 }
 
 .site-header.is-scrolled,
@@ -170,7 +189,8 @@ li + li {
   width: 100%;
   min-height: 80px;
   margin-top: 0.35rem;
-  padding: 0 max(1.25rem, calc((100vw - 1160px) / 2 + 1.45rem)) 0 max(1.25rem, calc((100vw - 1160px) / 2 + 1.65rem));
+  padding: 0 clamp(1.25rem, 8vw, calc((100% - 1160px) / 2 + 1.45rem)) 0
+    clamp(1.25rem, 8vw, calc((100% - 1160px) / 2 + 1.65rem));
   color: #fff;
   background: linear-gradient(135deg, var(--water-deep), var(--water));
   box-shadow: 0 18px 42px rgba(7, 87, 107, 0.28);
@@ -195,8 +215,16 @@ li + li {
   color: #fff;
   font-size: 0;
   background:
-    radial-gradient(circle at 72% 20%, rgba(255, 255, 255, 0.98) 0 4px, transparent 4.5px),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(217, 243, 246, 0.72));
+    radial-gradient(
+      circle at 72% 20%,
+      rgba(255, 255, 255, 0.98) 0 4px,
+      transparent 4.5px
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(217, 243, 246, 0.72)
+    );
   border-radius: 62% 38% 58% 42% / 48% 50% 50% 52%;
   filter: drop-shadow(0 12px 18px rgba(3, 35, 45, 0.24));
 }
@@ -209,9 +237,20 @@ li + li {
   width: 32px;
   height: 23px;
   background:
-    linear-gradient(135deg, transparent 0 47%, var(--water-deep) 48% 58%, transparent 59%),
-    linear-gradient(225deg, transparent 0 47%, var(--water-deep) 48% 58%, transparent 59%),
-    linear-gradient(var(--water-deep), var(--water-deep)) center bottom / 23px 13px no-repeat;
+    linear-gradient(
+      135deg,
+      transparent 0 47%,
+      var(--water-deep) 48% 58%,
+      transparent 59%
+    ),
+    linear-gradient(
+      225deg,
+      transparent 0 47%,
+      var(--water-deep) 48% 58%,
+      transparent 59%
+    ),
+    linear-gradient(var(--water-deep), var(--water-deep)) center bottom / 23px
+      13px no-repeat;
   border-radius: 2px 2px 8px 8px;
 }
 
@@ -225,7 +264,7 @@ li + li {
   border: 2px solid var(--water);
   border-color: transparent transparent var(--water) transparent;
   border-radius: 0 0 50% 50%;
-  box-shadow: 0 5px 0 -2px rgba(15, 127, 149, 0.58);
+  box-shadow: 0 5px 0 -2px rgba(217, 154, 34, 0.58);
 }
 
 .brand span:last-child {
@@ -297,7 +336,9 @@ li + li {
   border-bottom: 1.8px solid currentColor;
   opacity: 0.9;
   transform: translateY(-3px) rotate(45deg);
-  transition: transform 180ms ease, opacity 180ms ease;
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease;
 }
 
 .nav-dropdown-trigger::after {
@@ -353,7 +394,10 @@ li + li {
   opacity: 0;
   visibility: hidden;
   transform: translate(-50%, 8px);
-  transition: opacity 180ms ease, visibility 180ms ease, transform 180ms ease;
+  transition:
+    opacity 180ms ease,
+    visibility 180ms ease,
+    transform 180ms ease;
 }
 
 .nav-dropdown:hover .nav-dropdown-menu,
@@ -454,7 +498,10 @@ li + li {
   border-radius: var(--radius);
   font-weight: 800;
   font-size: 0.84rem;
-  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
 }
 
 .btn:hover {
@@ -462,9 +509,9 @@ li + li {
 }
 
 .btn-primary {
-  background: var(--water);
+  background: linear-gradient(135deg, var(--amber), var(--clay));
   color: #fff;
-  box-shadow: 0 14px 30px rgba(7, 87, 107, 0.24);
+  box-shadow: 0 14px 30px rgba(143, 91, 18, 0.24);
 }
 
 .site-header .btn-primary {
@@ -474,9 +521,9 @@ li + li {
 }
 
 .btn-secondary {
-  border-color: rgba(255, 255, 255, 0.45);
+  border-color: rgba(255, 242, 207, 0.56);
   color: inherit;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 242, 207, 0.12);
 }
 
 .site-header.is-scrolled .btn-secondary,
@@ -500,7 +547,10 @@ li + li {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
-  transition: opacity 260ms ease, visibility 260ms ease, transform 260ms ease;
+  transition:
+    opacity 260ms ease,
+    visibility 260ms ease,
+    transform 260ms ease;
   overflow-y: auto;
 }
 
@@ -516,16 +566,30 @@ li + li {
 
 .mobile-menu nav {
   display: grid;
-  gap: 1rem;
-  margin: 2rem 0;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(2rem, 10vw, 4rem);
-  line-height: 1;
+  gap: 0.45rem;
+  margin: 1.35rem 0;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: clamp(1.25rem, 5.8vw, 2rem);
+  font-weight: 900;
+  line-height: 1.08;
+  text-transform: uppercase;
+}
+
+.mobile-menu nav > a,
+.mobile-services-dropdown summary {
+  padding: 0.72rem 0;
 }
 
 .mobile-services-dropdown {
   display: grid;
-  gap: 0.9rem;
+  gap: 0;
 }
 
 .mobile-services-dropdown summary {
@@ -535,6 +599,7 @@ li + li {
   gap: 1rem;
   cursor: pointer;
   list-style: none;
+  font: inherit;
 }
 
 .mobile-services-dropdown summary::-webkit-details-marker {
@@ -560,7 +625,8 @@ li + li {
   gap: 0.25rem;
   max-height: 46vh;
   overflow-y: auto;
-  padding: 0.75rem;
+  margin-top: 0.35rem;
+  padding: 0.65rem;
   border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.1);
@@ -569,7 +635,14 @@ li + li {
 .mobile-menu .mobile-service-link {
   padding: 0.7rem 0.75rem;
   border-radius: 6px;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   font-size: 0.98rem;
   font-weight: 800;
   line-height: 1.2;
@@ -608,7 +681,7 @@ li + li {
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
-  color: var(--steel);
+  color: var(--amber-deep);
   font-size: 0.75rem;
   font-weight: 900;
   letter-spacing: 0.12em;
@@ -619,11 +692,15 @@ li + li {
   content: "";
   width: 26px;
   height: 1px;
-  background: currentColor;
+  background: linear-gradient(90deg, currentColor, var(--water));
 }
 
 .muted {
-  background: var(--mist);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 242, 207, 0.48),
+    rgba(231, 238, 240, 0.72)
+  );
 }
 
 .section-heading {
@@ -645,7 +722,8 @@ li + li {
   color: #fff;
   background:
     linear-gradient(110deg, rgba(8, 30, 39, 0.88), rgba(8, 30, 39, 0.46)),
-    var(--hero-image, url("../img/home/water-damage-hero-assessment.webp")) center / cover;
+    var(--hero-image, url("../img/home/water-damage-hero-assessment.webp"))
+      center / cover;
 }
 
 .page-hero::after {
@@ -653,7 +731,10 @@ li + li {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.08) 1px,
+    transparent 1px
+  );
   background-size: 6px 6px;
   opacity: 0.24;
 }
@@ -712,8 +793,13 @@ li + li {
   z-index: 2;
   margin-top: -48px;
   overflow: hidden;
-  background: var(--surface);
-  border-block: 1px solid var(--line);
+  background: linear-gradient(
+    90deg,
+    var(--amber-light),
+    #fffdf8 46%,
+    var(--water-light)
+  );
+  border-block: 1px solid rgba(143, 91, 18, 0.18);
   box-shadow: var(--shadow);
 }
 
@@ -733,7 +819,7 @@ li + li {
   width: clamp(280px, 28vw, 420px);
   flex: 0 0 auto;
   padding: 1.2rem 1.65rem 1.25rem;
-  border-right: 1px solid var(--line);
+  border-right: 1px solid rgba(143, 91, 18, 0.16);
 }
 
 .trust-item strong {
@@ -742,13 +828,13 @@ li + li {
   font-size: clamp(1rem, 1vw, 1.16rem);
   font-weight: 900;
   line-height: 1.05;
-  color: var(--deep);
+  color: var(--night);
   letter-spacing: 0.01em;
   text-wrap: balance;
 }
 
 .trust-item span {
-  color: var(--muted);
+  color: #5f6768;
   display: block;
   max-width: 31ch;
   font-size: 0.86rem;
@@ -916,7 +1002,6 @@ li + li {
 
 details {
   border-top: 1px solid var(--line);
-  padding: 1.1rem 0;
 }
 
 details:last-child {
@@ -951,7 +1036,7 @@ details:not([open]) .accordion-content {
 .final-cta {
   color: #fff;
   background:
-    linear-gradient(135deg, rgba(11, 41, 52, 0.94), rgba(30, 89, 104, 0.86)),
+    linear-gradient(135deg, rgba(7, 31, 43, 0.96), rgba(143, 91, 18, 0.72)),
     url("../img/home/restoration-planning-documents.webp") center / cover;
 }
 
@@ -988,7 +1073,7 @@ details:not([open]) .accordion-content {
 .footer-link-emphasis {
   width: fit-content;
   margin-top: 0.7rem;
-  color: #55d4e8;
+  color: var(--amber-light);
   font-weight: 900;
 }
 
@@ -1030,7 +1115,7 @@ details:not([open]) .accordion-content {
 }
 
 .footer-legal-link:hover {
-  color: #55d4e8;
+  color: var(--amber-light);
 }
 
 .form-panel {
@@ -1092,7 +1177,9 @@ textarea {
 .reveal {
   opacity: 0;
   transform: translateY(18px);
-  transition: opacity 600ms ease, transform 600ms ease;
+  transition:
+    opacity 600ms ease,
+    transform 600ms ease;
 }
 
 .reveal.is-visible {
@@ -1115,19 +1202,61 @@ textarea {
     display: none;
   }
 
-  .phone-icon,
-  .menu-toggle {
-    display: grid;
-  }
-
   .phone-icon {
-    font-size: 0;
+    display: none;
   }
 
-  .phone-icon::before {
-    content: "TEL";
-    font-size: 0.74rem;
-    font-weight: 900;
+  .menu-toggle {
+    position: relative;
+    display: grid !important;
+    place-items: center;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    border-radius: 6px;
+    color: #fff;
+    z-index: 2;
+    background:
+      linear-gradient(currentColor, currentColor) center calc(50% - 8px) / 22px
+        2px no-repeat,
+      linear-gradient(currentColor, currentColor) center / 22px 2px no-repeat,
+      linear-gradient(currentColor, currentColor) center calc(50% + 8px) / 22px
+        2px no-repeat,
+      rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 0 1px rgba(7, 31, 43, 0.08);
+  }
+
+  .menu-toggle::before,
+  .menu-toggle::after {
+    display: none;
+  }
+
+  .nav-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.85rem;
+    width: 100%;
+    padding-inline: 1rem 1.35rem;
+    overflow: hidden;
+  }
+
+  .brand {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .brand span:last-child {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .header-actions {
+    display: flex;
+    flex: 0 0 auto;
+    justify-self: end;
+    min-width: 44px;
   }
 
   .hero-grid,
@@ -1163,10 +1292,9 @@ textarea {
   }
 
   .nav-inner {
-    position: relative;
     min-height: 66px;
     margin-top: 0;
-    padding-inline: 1rem;
+    padding-inline: 1rem 1.35rem;
   }
 
   .phone-icon {
@@ -1174,29 +1302,15 @@ textarea {
   }
 
   .header-actions {
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .menu-toggle {
-    display: grid !important;
-    width: 44px;
-    height: 44px;
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    color: #fff;
-    z-index: 2;
-    background:
-      linear-gradient(currentColor, currentColor) center calc(50% - 6px) / 18px 2px no-repeat,
-      linear-gradient(currentColor, currentColor) center / 18px 2px no-repeat,
-      linear-gradient(currentColor, currentColor) center calc(50% + 6px) / 18px 2px no-repeat,
-      rgba(255, 255, 255, 0.14);
+    position: static;
+    transform: none;
+    z-index: 4;
   }
 
   .brand {
+    max-width: 100%;
     gap: 0.65rem;
-    padding-right: 3.5rem;
+    padding-right: 0;
   }
 
   .brand-mark {
@@ -1210,9 +1324,20 @@ textarea {
     width: 24px;
     height: 18px;
     background:
-      linear-gradient(135deg, transparent 0 47%, var(--water-deep) 48% 58%, transparent 59%),
-      linear-gradient(225deg, transparent 0 47%, var(--water-deep) 48% 58%, transparent 59%),
-      linear-gradient(var(--water-deep), var(--water-deep)) center bottom / 17px 10px no-repeat;
+      linear-gradient(
+        135deg,
+        transparent 0 47%,
+        var(--water-deep) 48% 58%,
+        transparent 59%
+      ),
+      linear-gradient(
+        225deg,
+        transparent 0 47%,
+        var(--water-deep) 48% 58%,
+        transparent 59%
+      ),
+      linear-gradient(var(--water-deep), var(--water-deep)) center bottom / 17px
+        10px no-repeat;
   }
 
   .brand-mark::after {
@@ -1227,7 +1352,7 @@ textarea {
   }
 
   .brand span:last-child {
-    max-width: 190px;
+    max-width: 155px;
     font-size: 0.98rem;
     white-space: normal;
   }

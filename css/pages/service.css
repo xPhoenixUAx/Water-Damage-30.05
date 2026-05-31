@@ -1,6 +1,6 @@
 body[data-service] {
   font-family: Manrope, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #f6faf9;
+  background: #fffdf8;
 }
 
 body[data-service] main h1,
@@ -31,8 +31,8 @@ body[data-service] main li {
   overflow: hidden;
   color: #fff;
   background:
-    linear-gradient(90deg, rgba(4, 36, 42, 0.9) 0%, rgba(8, 76, 87, 0.7) 42%, rgba(10, 46, 54, 0.18) 100%),
-    linear-gradient(0deg, rgba(8, 48, 56, 0.18), rgba(8, 48, 56, 0.18)),
+    linear-gradient(90deg, rgba(7, 31, 43, 0.94) 0%, rgba(8, 76, 87, 0.64) 42%, rgba(143, 91, 18, 0.3) 100%),
+    linear-gradient(0deg, rgba(143, 91, 18, 0.16), rgba(8, 48, 56, 0.16)),
     var(--service-hero-image) center / cover;
 }
 
@@ -41,7 +41,7 @@ body[data-service] main li {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(circle at 68% 4%, rgba(255, 232, 166, 0.5), transparent 27%);
+  background: radial-gradient(circle at 68% 4%, rgba(255, 242, 207, 0.54), transparent 27%);
 }
 
 .service-detail-hero-inner {
@@ -52,7 +52,7 @@ body[data-service] main li {
 .service-hero-label {
   display: inline-flex;
   margin-bottom: 0.85rem;
-  color: #a8eff1;
+  color: var(--amber-light);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -88,7 +88,7 @@ body[data-service] main li {
 
 .service-detail-main {
   background:
-    linear-gradient(180deg, #fff 0%, #f6faf9 46%, #fff 100%);
+    linear-gradient(180deg, #fffdf8 0%, rgba(217, 243, 246, 0.38) 46%, #fff 100%);
 }
 
 .service-detail-main.section {
@@ -121,7 +121,7 @@ body[data-service] main li {
   overflow: visible;
   padding: 0.42rem;
   background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(16, 32, 41, 0.08);
+  border: 1px solid rgba(143, 91, 18, 0.16);
   border-radius: 16px;
   box-shadow: 0 14px 34px rgba(16, 32, 41, 0.08);
   backdrop-filter: blur(14px);
@@ -146,7 +146,7 @@ body[data-service] main li {
   width: 13px;
   height: 13px;
   justify-self: center;
-  color: var(--water);
+  color: var(--amber-deep);
 }
 
 .service-side-nav a span {
@@ -155,8 +155,8 @@ body[data-service] main li {
 
 .service-side-nav a.is-active,
 .service-side-nav a:hover {
-  color: var(--water);
-  background: rgba(217, 243, 246, 0.68);
+  color: var(--amber-deep);
+  background: var(--amber-light);
   transform: translateX(2px);
 }
 
@@ -188,7 +188,7 @@ body[data-service] main li {
   place-items: center;
   margin-top: -1.65rem;
   color: #fff;
-  background: #69d957;
+  background: var(--sage);
   border: 3px solid #fff;
   border-radius: 50%;
 }
@@ -204,7 +204,7 @@ body[data-service] main li {
 }
 
 .service-help-body a {
-  color: #41c94b;
+  color: var(--sage);
   font-size: 0.86rem;
   font-weight: 800;
   line-height: 1.1;
@@ -261,7 +261,7 @@ body[data-service] main li {
   display: grid;
   place-items: center;
   margin: 0 0 1rem;
-  color: var(--water);
+  color: var(--amber-deep);
   background: transparent;
   border: 0;
   border-radius: 0;
@@ -322,7 +322,7 @@ body[data-service] main li {
   height: 28px;
   display: grid;
   place-items: center;
-  color: var(--water);
+  color: var(--amber-deep);
   background: transparent;
   border-radius: 0;
 }
@@ -393,7 +393,7 @@ body[data-service] main li {
   width: 22px;
   height: 22px;
   padding: 0;
-  color: var(--water);
+  color: var(--clay);
   background: transparent;
   border-radius: 0;
 }
@@ -402,7 +402,7 @@ body[data-service] main li {
   width: 22px;
   height: 22px;
   padding: 0;
-  color: var(--water);
+  color: var(--clay);
   background: transparent;
   border-radius: 0;
 }
@@ -452,7 +452,7 @@ body[data-service] main li {
   width: 50px;
   height: 50px;
   padding: 0;
-  color: var(--water);
+  color: var(--amber-deep);
   background: transparent;
   border-radius: 0;
   box-shadow: none;
@@ -494,7 +494,7 @@ body[data-service] main li {
   width: 19px;
   height: 19px;
   padding: 0;
-  color: var(--water);
+  color: var(--clay);
   background: transparent;
   border-radius: 0;
 }
@@ -549,7 +549,7 @@ body[data-service] main li {
   display: grid;
   place-items: center;
   color: #fff;
-  background: var(--water);
+  background: var(--clay);
   border-radius: 50%;
   font-size: 0.82rem;
   font-weight: 800;

@@ -535,6 +535,44 @@
     }
   }
 
+  function initContactFormConfirmation() {
+    const form = document.querySelector(".contact-form");
+    const modal = document.querySelector("[data-confirmation-modal]");
+    if (!form || !modal) return;
+
+    const panel = modal.querySelector(".confirmation-modal-panel");
+    const closeButtons = modal.querySelectorAll("[data-confirmation-close]");
+
+    const closeModal = () => {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("menu-open");
+    };
+
+    const openModal = () => {
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("menu-open");
+      if (panel) panel.focus();
+    };
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      openModal();
+      form.reset();
+    });
+
+    closeButtons.forEach((button) => {
+      button.addEventListener("click", closeModal);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modal.classList.contains("is-open")) {
+        closeModal();
+      }
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     hydrateConfig();
     renderServiceLinks();
@@ -545,6 +583,7 @@
     initIcons();
     initHeader();
     initSmoothAccordions();
+    initContactFormConfirmation();
     initReveal();
   });
 })();

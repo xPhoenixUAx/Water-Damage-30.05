@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/bundle.css">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg"><link rel="stylesheet" href="./css/bundle.css">
 </head>
 <body class="on-light contact-page">
   <header class="site-header">
@@ -61,7 +61,6 @@
             <label class="full">What happened?<textarea name="message"></textarea></label>
             <div class="full"><button class="btn btn-primary" type="submit" data-cta-primary></button></div>
           </div>
-          <p class="contact-form-note">Form is prepared as a static UI for future lead handling.</p>
         </form>
       </div>
     </section>
@@ -85,6 +84,17 @@
       </div>
     </section>
   </main>
+
+  <div class="confirmation-modal" data-confirmation-modal aria-hidden="true">
+    <div class="confirmation-modal-backdrop" data-confirmation-close></div>
+    <div class="confirmation-modal-panel" role="dialog" aria-modal="true" aria-labelledby="confirmation-title" tabindex="-1">
+      <button class="confirmation-modal-close" type="button" data-confirmation-close aria-label="Close confirmation">X</button>
+      <span class="confirmation-modal-icon" aria-hidden="true"></span>
+      <h2 id="confirmation-title">Your request has been received.</h2>
+      <p>Thank you for contacting <span data-company-name></span>. Your information has been submitted, and a provider connection specialist may follow up using the contact details you provided.</p>
+      <button class="btn btn-primary" type="button" data-confirmation-close>Close</button>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="container">

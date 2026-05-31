@@ -23,8 +23,8 @@
   isolation: isolate;
   padding: 10.25rem 0 4.7rem;
   background:
-    linear-gradient(90deg, rgba(7, 87, 107, 0.9) 0%, rgba(15, 127, 149, 0.66) 42%, rgba(11, 41, 52, 0.2) 78%),
-    linear-gradient(0deg, rgba(7, 87, 107, 0.22), rgba(7, 87, 107, 0.22)),
+    linear-gradient(90deg, rgba(7, 31, 43, 0.94) 0%, rgba(7, 87, 107, 0.62) 42%, rgba(143, 91, 18, 0.28) 78%),
+    linear-gradient(0deg, rgba(143, 91, 18, 0.16), rgba(7, 87, 107, 0.18)),
     var(--hero-image) center 48% / cover;
 }
 
@@ -32,7 +32,7 @@
   z-index: 0;
   background:
     linear-gradient(90deg, rgba(7, 87, 107, 0.18), transparent 52%),
-    radial-gradient(circle at 72% 18%, rgba(217, 243, 246, 0.28), transparent 28%);
+    radial-gradient(circle at 72% 18%, rgba(255, 242, 207, 0.38), transparent 28%);
   opacity: 1;
 }
 
@@ -59,7 +59,8 @@
 }
 
 .about-intro {
-  background: var(--surface);
+  background:
+    linear-gradient(90deg, rgba(217, 243, 246, 0.48), rgba(255, 253, 248, 1) 44%);
 }
 
 .about-intro-grid,
@@ -126,7 +127,7 @@
   top: 0.45em;
   width: 0.48rem;
   height: 0.48rem;
-  background: var(--water);
+  background: var(--clay);
   border-radius: 50%;
 }
 
@@ -145,13 +146,13 @@
   align-content: start;
   gap: 0.85rem;
   padding-top: 1.2rem;
-  border-top: 1px solid var(--line);
+  border-top: 3px solid rgba(217, 154, 34, 0.62);
 }
 
 .about-value-card svg {
   width: 30px;
   height: 30px;
-  color: var(--water);
+  color: var(--amber-deep);
 }
 
 .about-value-card h2 {
@@ -170,7 +171,19 @@
 }
 
 .about-process-section {
-  background: var(--mist);
+  background:
+    linear-gradient(135deg, var(--night), #123642);
+  color: #fff;
+}
+
+.about-process-section p,
+.about-process-section .about-process-list p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.about-process-section h2,
+.about-process-section .about-process-list strong {
+  color: #fff;
 }
 
 .about-process-layout {
@@ -197,7 +210,7 @@
 }
 
 .about-process-list span {
-  color: var(--water);
+  color: var(--amber);
   font-size: 0.78rem;
   font-weight: 800;
 }
@@ -264,7 +277,7 @@
 }
 
 .about-faq-section {
-  background: var(--surface);
+  background: var(--amber-light);
 }
 
 .about-page summary {

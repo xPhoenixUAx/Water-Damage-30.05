@@ -22,8 +22,8 @@
   isolation: isolate;
   padding: 10.25rem 0 4.7rem;
   background:
-    linear-gradient(90deg, rgba(7, 87, 107, 0.9) 0%, rgba(15, 127, 149, 0.66) 42%, rgba(11, 41, 52, 0.2) 78%),
-    linear-gradient(0deg, rgba(7, 87, 107, 0.22), rgba(7, 87, 107, 0.22)),
+    linear-gradient(90deg, rgba(7, 31, 43, 0.94) 0%, rgba(7, 87, 107, 0.62) 42%, rgba(143, 91, 18, 0.26) 78%),
+    linear-gradient(0deg, rgba(143, 91, 18, 0.16), rgba(7, 87, 107, 0.18)),
     var(--hero-image) center 48% / cover;
 }
 
@@ -31,7 +31,7 @@
   z-index: 0;
   background:
     linear-gradient(90deg, rgba(7, 87, 107, 0.18), transparent 52%),
-    radial-gradient(circle at 72% 18%, rgba(217, 243, 246, 0.28), transparent 28%);
+    radial-gradient(circle at 72% 18%, rgba(255, 242, 207, 0.38), transparent 28%);
   opacity: 1;
 }
 
@@ -74,6 +74,11 @@
   align-items: start;
 }
 
+.services-page main > .section {
+  background:
+    linear-gradient(90deg, #fffdf8 0%, #fffdf8 54%, rgba(255, 242, 207, 0.46) 54%, rgba(255, 242, 207, 0.46) 100%);
+}
+
 .services-directory-layout.reveal {
   opacity: 1;
   transform: none;
@@ -109,7 +114,7 @@
   max-height: min(780px, calc(100vh - 8rem));
   overflow-y: auto;
   padding: 0.4rem 0.9rem 0.4rem 0.2rem;
-  scrollbar-color: rgba(15, 127, 149, 0.55) rgba(255, 253, 248, 0.7);
+  scrollbar-color: rgba(217, 154, 34, 0.65) rgba(255, 253, 248, 0.7);
   scrollbar-width: thin;
 }
 
@@ -122,7 +127,7 @@
 }
 
 .services-scroll-list::-webkit-scrollbar-thumb {
-  background: rgba(15, 127, 149, 0.55);
+  background: rgba(217, 154, 34, 0.65);
   border-radius: 999px;
 }
 
@@ -138,7 +143,7 @@
   min-height: 150px;
   padding: 1.35rem 1.55rem;
   background: var(--surface);
-  border: 1px solid rgba(16, 32, 41, 0.08);
+  border: 1px solid rgba(143, 91, 18, 0.12);
   border-radius: var(--radius);
   box-shadow: 0 18px 44px rgba(16, 32, 41, 0.08);
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
@@ -146,8 +151,8 @@
 
 .service-card-body:hover,
 .service-card-body:focus-visible {
-  border-color: rgba(15, 127, 149, 0.28);
-  box-shadow: 0 24px 58px rgba(7, 87, 107, 0.15);
+  border-color: rgba(217, 154, 34, 0.36);
+  box-shadow: 0 24px 58px rgba(143, 91, 18, 0.14);
   outline: 0;
   transform: translateY(-2px);
 }
@@ -166,7 +171,7 @@
 .service-card-copy span {
   display: block;
   margin-bottom: 0.45rem;
-  color: var(--water);
+  color: var(--amber-deep);
   font-size: 0.66rem;
   font-weight: 900;
   letter-spacing: 0.1em;
@@ -246,21 +251,44 @@
 }
 
 @media (max-width: 640px) {
+  .services-page main > .section {
+    background: #fffdf8;
+  }
+
   .services-scroll-list {
-    max-height: 620px;
-    gap: 1rem;
-    padding-right: 0.2rem;
+    display: flex;
+    gap: 0.9rem;
+    max-height: none;
+    margin-inline: -12px;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding: 0.25rem 12px 1rem;
+    scroll-padding-inline: 12px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .services-scroll-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .service-scroll-card {
+    flex: 0 0 min(82vw, 340px);
+    scroll-snap-align: start;
   }
 
   .service-card-body {
-    grid-template-columns: 78px minmax(0, 1fr);
+    grid-template-columns: 1fr;
     gap: 0.9rem;
-    min-height: 132px;
+    height: 100%;
+    min-height: 330px;
     padding: 1rem;
   }
 
   .service-card-body img {
-    width: 78px;
+    width: 100%;
+    aspect-ratio: 16 / 10;
   }
 
   .service-card-copy span {
@@ -280,6 +308,29 @@
 
   .services-page main p {
     font-size: 0.88rem;
+  }
+
+  .services-page .faq-wrap {
+    padding-inline: 18px;
+  }
+
+  .services-page .faq-wrap h2 {
+    max-width: 12ch;
+    margin-bottom: 1rem;
+    line-height: 1.14;
+  }
+
+  .services-page .faq-wrap details {
+    padding-block: 0.85rem;
+  }
+
+  .services-page .faq-wrap summary {
+    line-height: 1.35;
+  }
+
+  .services-page .faq-wrap details p {
+    margin-top: 0.65rem;
+    padding-left: 1.1rem;
   }
 
   .services-page .section-copy h2,
