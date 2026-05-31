@@ -1,3 +1,20 @@
+.services-page {
+  font-family: Manrope, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.services-page main h1,
+.services-page main h2,
+.services-page main h3,
+.services-page summary,
+.services-page .btn {
+  font-family: inherit;
+}
+
+.services-page main p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
 .services-hero {
   --hero-image: url("../../img/services/water-damage-services-overview.webp");
   min-height: 330px;
@@ -24,9 +41,9 @@
 }
 
 .services-hero h1 {
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: clamp(2.8rem, 5vw, 4.25rem);
-  font-weight: 900;
+  font-size: clamp(2.35rem, 4.35vw, 3.55rem);
+  font-weight: 800;
+  line-height: 1;
   letter-spacing: 0;
   color: #fff;
 }
@@ -37,8 +54,8 @@
   gap: 0.7rem;
   margin-top: 1.3rem;
   color: rgba(255, 255, 255, 0.92);
-  font-size: 1rem;
-  font-weight: 800;
+  font-size: 0.88rem;
+  font-weight: 700;
 }
 
 .hero-breadcrumb a {
@@ -70,12 +87,16 @@
 
 .services-directory-intro h2 {
   max-width: 11ch;
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.06;
   color: var(--deep);
 }
 
 .services-directory-intro p {
   max-width: 52ch;
   margin-top: 1.35rem;
+  font-size: 0.95rem;
 }
 
 .services-directory-intro .btn {
@@ -146,7 +167,7 @@
   display: block;
   margin-bottom: 0.45rem;
   color: var(--water);
-  font-size: 0.72rem;
+  font-size: 0.66rem;
   font-weight: 900;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -155,7 +176,9 @@
 .service-card-copy h3 {
   max-width: 19ch;
   color: var(--ink);
-  font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+  font-size: clamp(1.02rem, 1.45vw, 1.34rem);
+  font-weight: 800;
+  line-height: 1.12;
 }
 
 .service-card-copy p {
@@ -163,8 +186,26 @@
   padding-top: 0.85rem;
   border-top: 1px solid var(--line);
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   line-height: 1.5;
+}
+
+.services-page .section-copy h2,
+.services-page .faq-wrap h2,
+.services-page .final-cta h2 {
+  font-size: clamp(1.75rem, 2.7vw, 2.45rem);
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.services-page .section-kicker {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+}
+
+.services-page summary {
+  font-size: 0.95rem;
+  font-weight: 800;
 }
 
 @media (max-width: 640px) {
@@ -175,12 +216,12 @@
   }
 
   .services-hero h1 {
-    font-size: clamp(2.35rem, 13vw, 3.1rem);
+    font-size: clamp(2rem, 11vw, 2.55rem);
   }
 
   .hero-breadcrumb {
     margin-top: 0.9rem;
-    font-size: 0.92rem;
+    font-size: 0.82rem;
   }
 }
 
@@ -223,17 +264,28 @@
   }
 
   .service-card-copy span {
-    font-size: 0.66rem;
+    font-size: 0.6rem;
   }
 
   .service-card-copy h3 {
     max-width: none;
-    font-size: 1.02rem;
+    font-size: 0.94rem;
   }
 
   .service-card-copy p {
     margin-top: 0.6rem;
     padding-top: 0.6rem;
-    font-size: 0.78rem;
+    font-size: 0.74rem;
+  }
+
+  .services-page main p {
+    font-size: 0.88rem;
+  }
+
+  .services-page .section-copy h2,
+  .services-page .faq-wrap h2,
+  .services-page .final-cta h2,
+  .services-directory-intro h2 {
+    font-size: 1.65rem;
   }
 }

@@ -1,3 +1,711 @@
-.service-hero {
-  --hero-image: url("../../img/services/water-damage-services-overview.webp");
+body[data-service] {
+  font-family: Manrope, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f6faf9;
+}
+
+body[data-service] main h1,
+body[data-service] main h2,
+body[data-service] main h3,
+body[data-service] summary,
+body[data-service] .btn {
+  font-family: inherit;
+}
+
+body[data-service] main p,
+body[data-service] main li {
+  font-size: 0.93rem;
+  line-height: 1.62;
+}
+
+.service-icon {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.service-detail-hero {
+  position: relative;
+  min-height: 390px;
+  display: flex;
+  align-items: end;
+  padding: 11rem 0 5rem;
+  overflow: hidden;
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(4, 36, 42, 0.9) 0%, rgba(8, 76, 87, 0.7) 42%, rgba(10, 46, 54, 0.18) 100%),
+    linear-gradient(0deg, rgba(8, 48, 56, 0.18), rgba(8, 48, 56, 0.18)),
+    var(--service-hero-image) center / cover;
+}
+
+.service-detail-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 68% 4%, rgba(255, 232, 166, 0.5), transparent 27%);
+}
+
+.service-detail-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.service-hero-label {
+  display: inline-flex;
+  margin-bottom: 0.85rem;
+  color: #a8eff1;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.service-detail-hero h1 {
+  max-width: 840px;
+  font-size: clamp(2.45rem, 5vw, 4.25rem);
+  font-weight: 800;
+  line-height: 1;
+  color: #fff;
+}
+
+.service-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.58rem;
+  margin-top: 1.35rem;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.service-breadcrumb a {
+  color: #fff;
+}
+
+.service-breadcrumb span[aria-hidden="true"] {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.service-detail-main {
+  background:
+    linear-gradient(180deg, #fff 0%, #f6faf9 46%, #fff 100%);
+}
+
+.service-detail-main.section {
+  padding-top: clamp(4.4rem, 6vw, 5.6rem);
+}
+
+.service-detail-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.32fr) minmax(0, 1fr);
+  gap: clamp(1.8rem, 4vw, 3.8rem);
+  align-items: stretch;
+}
+
+.service-detail-sidebar {
+  position: sticky;
+  top: 8.8rem;
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 0.7rem;
+  align-self: start;
+  max-height: calc(100vh - 9.6rem);
+  overflow: visible;
+}
+
+.service-side-nav {
+  z-index: 8;
+  display: grid;
+  gap: 0.06rem;
+  max-height: none;
+  overflow: visible;
+  padding: 0.42rem;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(16, 32, 41, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 14px 34px rgba(16, 32, 41, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.service-side-nav a {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 0.36rem;
+  align-items: center;
+  min-height: 25px;
+  padding: 0.2rem 0.36rem;
+  border-radius: 7px;
+  color: var(--deep);
+  font-size: 0.67rem;
+  font-weight: 800;
+  line-height: 1.08;
+  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.service-side-nav .service-icon {
+  width: 13px;
+  height: 13px;
+  justify-self: center;
+  color: var(--water);
+}
+
+.service-side-nav a span {
+  min-width: 0;
+}
+
+.service-side-nav a.is-active,
+.service-side-nav a:hover {
+  color: var(--water);
+  background: rgba(217, 243, 246, 0.68);
+  transform: translateX(2px);
+}
+
+.service-help-card {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(16, 32, 41, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 14px 34px rgba(16, 32, 41, 0.08);
+}
+
+.service-help-card img {
+  aspect-ratio: 16 / 4;
+  object-fit: cover;
+}
+
+.service-help-body {
+  display: grid;
+  justify-items: center;
+  gap: 0.22rem;
+  padding: 0.48rem 0.62rem 0.6rem;
+  text-align: center;
+}
+
+.service-help-icon {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  margin-top: -1.65rem;
+  color: #fff;
+  background: #69d957;
+  border: 3px solid #fff;
+  border-radius: 50%;
+}
+
+.service-help-icon .service-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.service-help-body strong {
+  color: var(--deep);
+  font-size: 0.66rem;
+}
+
+.service-help-body a {
+  color: #41c94b;
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.service-detail-content {
+  max-width: none;
+}
+
+.service-detail-content-flow {
+  min-width: 0;
+  display: grid;
+  align-content: start;
+}
+
+.service-detail-section {
+  padding-top: clamp(3.4rem, 6vw, 5rem);
+}
+
+.service-panel,
+.service-photo-panel,
+.service-info-bands,
+.service-faq .faq-wrap {
+  padding-top: clamp(2rem, 4vw, 3rem);
+  background: transparent;
+  border-top: 1px solid rgba(16, 32, 41, 0.12);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.service-feature-image {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.service-feature-image img {
+  aspect-ratio: 16 / 8.5;
+  object-fit: cover;
+}
+
+.service-copy-panel {
+  position: relative;
+  padding: clamp(1.25rem, 3vw, 2rem) 0 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.service-copy-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  margin: 0 0 1rem;
+  color: var(--water);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.service-copy-icon .service-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.service-detail-content p {
+  color: var(--muted);
+}
+
+.service-detail-content h2,
+.service-section-heading h2,
+.service-planning-copy h2,
+.service-info-panel h2 {
+  color: var(--deep);
+  font-size: clamp(1.55rem, 2.45vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.service-detail-content h2 {
+  margin-top: 2.1rem;
+  margin-bottom: 0.8rem;
+}
+
+.service-section-heading {
+  max-width: 700px;
+  margin-bottom: 2rem;
+}
+
+.service-benefit-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid rgba(16, 32, 41, 0.1);
+}
+
+.service-benefit-card {
+  display: grid;
+  grid-template-columns: 34px minmax(180px, 0.32fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  min-height: 0;
+  padding: 1rem 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(16, 32, 41, 0.1);
+  border-radius: 0;
+}
+
+.service-benefit-card > span {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  color: var(--water);
+  background: transparent;
+  border-radius: 0;
+}
+
+.service-benefit-card .service-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.service-benefit-card h3 {
+  color: var(--deep);
+  font-size: 1rem;
+  font-weight: 800;
+  margin-top: 0.12rem;
+}
+
+.service-benefit-card p {
+  max-width: 52ch;
+  margin: 0;
+  color: var(--muted);
+}
+
+.service-planning-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.86fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  align-items: center;
+}
+
+.service-planning-image {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.service-planning-image img {
+  aspect-ratio: 1.18;
+  object-fit: cover;
+}
+
+.service-planning-copy p {
+  max-width: 58ch;
+  margin-top: 1rem;
+  color: var(--muted);
+}
+
+.service-planning-copy ul,
+.service-info-panel ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.service-planning-copy li,
+.service-info-panel li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 0.65rem;
+  align-items: start;
+  padding-left: 0;
+  color: var(--deep);
+  font-weight: 700;
+}
+
+.service-planning-copy li .service-icon {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  color: var(--water);
+  background: transparent;
+  border-radius: 0;
+}
+
+.service-info-panel li .service-icon {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  color: var(--water);
+  background: transparent;
+  border-radius: 0;
+}
+
+.service-info-bands {
+  background: transparent;
+}
+
+.service-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.service-info-panel {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.4fr) minmax(0, 1fr);
+  align-content: start;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  padding: 1.45rem 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid rgba(16, 32, 41, 0.1);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.service-info-panel:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.service-info-panel:last-child {
+  padding-bottom: 0;
+}
+
+.service-info-title {
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: start;
+  align-content: start;
+  margin-bottom: 0;
+}
+
+.service-info-title .service-icon {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  color: var(--water);
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.service-info-panel h2 {
+  margin-bottom: 0.45rem;
+  font-size: 1.28rem;
+  line-height: 1.15;
+}
+
+.service-info-title p {
+  max-width: 30ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.service-info-panel ul {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem 1rem;
+  align-content: start;
+}
+
+.service-info-panel .service-list-card {
+  min-height: 0;
+  padding: 0.25rem 0;
+  color: var(--ink-2);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.service-info-panel .service-list-card .service-icon {
+  width: 19px;
+  height: 19px;
+  padding: 0;
+  color: var(--water);
+  background: transparent;
+  border-radius: 0;
+}
+
+.service-process-grid {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.76fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 2.7rem);
+  align-items: start;
+}
+
+.service-inline-image {
+  margin: 1.35rem 0 0;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.service-inline-image img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.service-step-list {
+  counter-reset: service-step;
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-step-list li {
+  counter-increment: service-step;
+  position: relative;
+  margin: 0;
+  padding: 1rem 0 1rem 3.2rem;
+  color: var(--ink-2);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(16, 32, 41, 0.1);
+  border-radius: 0;
+  font-weight: 700;
+}
+
+.service-step-list li::before {
+  content: counter(service-step);
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  width: 1.9rem;
+  height: 1.9rem;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: var(--water);
+  border-radius: 50%;
+  font-size: 0.82rem;
+  font-weight: 800;
+  transform: translateY(-50%);
+}
+
+body[data-service] .related-list a {
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: none;
+  padding: 0;
+  gap: 0;
+  min-height: 0;
+}
+
+body[data-service] .related-list {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+body[data-service] .related-list img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+body[data-service] .related-list strong {
+  padding: 1rem 1rem 0.35rem;
+  color: var(--deep);
+}
+
+body[data-service] .related-list span {
+  padding: 0 1rem 1rem;
+}
+
+body[data-service] .faq-wrap h2,
+body[data-service] .final-cta h2 {
+  font-family: inherit;
+  font-size: clamp(1.55rem, 2.45vw, 2.2rem);
+  font-weight: 800;
+}
+
+@media (max-width: 980px) {
+  .service-detail-layout,
+  .service-planning-grid,
+  .service-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-detail-sidebar {
+    position: static;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .service-side-nav {
+    top: 6rem;
+  }
+
+  .service-benefit-grid,
+  .service-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-benefit-card {
+    grid-template-columns: 32px minmax(150px, 0.36fr) minmax(0, 1fr);
+  }
+
+  .service-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-info-panel {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-service] .related-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  body[data-service] main p,
+  body[data-service] main li {
+    font-size: 0.86rem;
+  }
+
+  .service-detail-hero {
+    min-height: 310px;
+    padding: 8rem 0 3.6rem;
+    background-position: center;
+  }
+
+  .service-detail-hero h1 {
+    font-size: clamp(2rem, 10vw, 2.7rem);
+  }
+
+  .service-breadcrumb {
+    font-size: 0.78rem;
+  }
+
+  .service-detail-sidebar,
+  .service-benefit-grid,
+  .service-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-benefit-card {
+    grid-template-columns: 28px minmax(0, 1fr);
+  }
+
+  .service-benefit-card p {
+    grid-column: 2;
+  }
+
+  .service-info-panel ul {
+    grid-template-columns: 1fr;
+  }
+
+  .service-detail-content-flow {
+    order: 1;
+  }
+
+  .service-detail-sidebar {
+    order: 2;
+  }
+
+  .service-side-nav {
+    position: static;
+    border-radius: 16px;
+  }
+
+  .service-help-card,
+  .service-feature-image,
+  .service-planning-image,
+  .service-info-panel,
+  .service-info-bands,
+  body[data-service] .related-list a {
+    border-radius: 0;
+  }
+
+  .service-detail-section {
+    padding-top: 3rem;
+  }
+
+  .service-feature-image img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .service-help-body a {
+    font-size: 1.1rem;
+  }
+
+  body[data-service] .related-list {
+    grid-template-columns: 1fr;
+  }
 }
